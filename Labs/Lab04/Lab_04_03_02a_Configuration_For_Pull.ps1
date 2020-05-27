@@ -31,7 +31,7 @@ $ConfigData = @{
         @{
             NodeName = 'ms1'
             CertificateFile = 'C:\PublicKeys\MS1.cer'
-            Thumbprint = '1D1FB28E22FB2410291291D47ED45DD2BA725A33'
+            Thumbprint = '1BF559A578CE95F70457066CB20EC9D95C7486CC'
         }
     )
 }

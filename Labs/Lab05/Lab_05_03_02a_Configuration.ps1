@@ -3,7 +3,7 @@
 
     Import-DscResource -ModuleName xNetworking, xSmbShare, PSDesiredStateConfiguration
 
-    Node ms1
+    Node ms2
     {
     
         xFirewall SMB-In

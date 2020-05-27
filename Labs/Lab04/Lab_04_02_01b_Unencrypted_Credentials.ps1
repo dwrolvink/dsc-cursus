@@ -21,7 +21,7 @@ $ConfigData = @{
     AllNodes = @(
         @{
             NodeName = 'localhost'
-
+            PsDscAllowPlainTextPassword = $true
         }
     )
 }

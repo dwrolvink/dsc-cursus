@@ -17,7 +17,7 @@ Param(
 
         LocalConfigurationManager
         {
-            CertificateID = ''
+            CertificateID = $Node.Thumbprint
         }
 
     }
@@ -27,8 +27,8 @@ $ConfigData = @{
     AllNodes = @(
         @{
             NodeName = 'ms1'
-            CertificateFile = ''
-            Thumbprint = ''
+            CertificateFile = 'C:\PublicKeys\MS1.cer'
+            Thumbprint = '1BF559A578CE95F70457066CB20EC9D95C7486CC'
         }
     )
 }

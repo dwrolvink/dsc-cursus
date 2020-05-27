@@ -1,9 +1,15 @@
 ﻿$Req = @{
     Template          = 'WebServer'
-    DnsName           = ''
-    SubjectName       = 'CN='
+    DnsName           = 'pull.contoso.com'
+    SubjectName       = 'CN=pull.contoso.com'
     Url               = 'ldap:'
     CertStoreLocation = 'Cert:\LocalMachine\My'
 }
 $cert = Get-Certificate @Req
 $thumbprint = $cert.Certificate.Thumbprint
+
+# Test certificate
+$cert
+$cert | fl *
+$cert.Certificate
+$cert.Certificate.Verify()

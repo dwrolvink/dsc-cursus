@@ -15,7 +15,7 @@ Configuration CreateHTTPSPullServer
             EndpointName            = 'PSDSCPullServer'
             Port                    = 8080
             PhysicalPath            = "$env:SystemDrive\inetpub\wwwroot\PSDSCPullServer"
-            CertificateThumbPrint   = ''
+            CertificateThumbPrint   = '3558CA7E65AED84144D1DCB3D05A63BA7B5AFC89'
             ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
             State                   = 'Started'

@@ -22,6 +22,4 @@ Param (
     }
 }
 
-cd C:\PShell\Labs\Lab05
 
-LCMPull -GUID $guid
