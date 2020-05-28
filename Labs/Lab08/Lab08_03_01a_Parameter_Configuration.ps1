@@ -1,14 +1,10 @@
 ﻿Configuration JumpServer_6
 {
-Param(
-    [string[]]$ComputerName = $Env:COMPUTERNAME,
-    [string[]]$Feature
-)
     Import-DscResource -ModuleName PSDesiredStateConfiguration, contosoComposites
 
-    Node $ComputerName
+    Node $AllNodes.NodeName
     {
-        ForEach ($WindowsFeature in $Feature) {
+        ForEach ($WindowsFeature in $Node.Feature) {
             WindowsFeature $WindowsFeature
             {
                 Name = $WindowsFeature
@@ -24,10 +20,18 @@ Param(
     }
 }
 
-
+$ServerData = @{
+    AllNodes = @(
+        @{
+            NodeName = "ms2"
+            Feature = 'Web-Mgmt-Console','Web-Scripting-Tools','RSAT-AD-Tools','RSAT-DNS-Server'
+         }
+    )
+}
+# Save ConfigurationData in a file with .psd1 file extension
 
 cd C:\PShell\Labs\Lab08
 
-JumpServer_6 -ComputerName ms2 -Feature 'Web-Mgmt-Console','Web-Scripting-Tools','RSAT-AD-Tools','RSAT-DNS-Server'
+JumpServer_6 -ConfigurationData $ServerData
 
 psEdit .\JumpServer_6\ms2.mof

@@ -20,25 +20,10 @@
     }
 }
 
-$ServerData = @{
-    AllNodes = @(
-        @{
-            NodeName = 'ms2'
-            Feature = 'Web-Mgmt-Console','Web-Scripting-Tools','RSAT-AD-Tools','RSAT-DNS-Server'
-        },
-        @{
-            NodeName = 'ms3'
-            Feature = 'Web-Mgmt-Console','Web-Scripting-Tools'
-        },
-        @{
-            NodeName = 'ms4'
-            Feature = 'RSAT-AD-Tools','RSAT-DNS-Server'
-        }
-    )
-}
+
 
 cd C:\PShell\Labs\Lab08
 
-JumpServer_7 -ConfigurationData $ServerData
+JumpServer_7 -ConfigurationData .\Lab08_03_02_JumpServer.psd1
 
 Get-ChildItem .\JumpServer_7\*.mof | ForEach-Object {psEdit $_.FullName}
